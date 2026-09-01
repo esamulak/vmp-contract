@@ -29,18 +29,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateItemListingRequest'
+              $ref: '#/components/schemas/CreateItemListingRequestDTO'
       responses:
         '201':
           description: Item listing created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateItemListingResponse'
+                $ref: '#/components/schemas/CreateItemListingResponseDTO'
 
 components:
   schemas:
-    CreateItemListingRequest:
+    CreateItemListingRequestDTO:
       type: object
       required:
         - items
@@ -48,11 +48,11 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Item'
+            $ref: '#/components/schemas/ItemDTO'
         publish:
           type: boolean
 
-    CreateItemListingResponse:
+    CreateItemListingResponseDTO:
       type: object
       required:
         - items
@@ -61,11 +61,11 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Item'
+            $ref: '#/components/schemas/ItemDTO'
         published:
           type: boolean
 
-    Item:
+    ItemDTO:
       type: object
       required:
         - name
