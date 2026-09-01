@@ -24,6 +24,12 @@ paths:
       tags:
         - Item Listing
       summary: Create item listing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateItemListingRequest'
       responses:
         '201':
           description: Item listing created successfully
