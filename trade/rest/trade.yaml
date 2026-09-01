@@ -42,13 +42,29 @@ components:
         items:
           type: array
           items:
-            type: string
+            $ref: '#/components/schemas/Item'
+        publish:
+          type: boolean
+
     CreateItemListingResponse:
       type: object
       required:
         - items
+        - published
       properties:
         items:
           type: array
           items:
-            type: string
+            $ref: '#/components/schemas/Item'
+        published:
+          type: boolean
+
+    Item:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
